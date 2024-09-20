@@ -5,6 +5,9 @@ import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <div className='gradenent-box'>
+
+    </div>
     <App />
   </StrictMode>,
 )
