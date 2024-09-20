@@ -15,7 +15,7 @@
 }
 .image-container {
   width: 100%;
-  height: 264px;
+  height: fit-content;
   display: flex;
   justify-content: center;
 }
@@ -27,15 +27,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50%;
 }
 .ewouk-name img {
-    position: absolute;
-  width: 60%;
-  height: 30%;
+position: relative  ;
+  width: 80%;
+  height: 100%;
 }
 .model-container {
     position: absolute;
   width: 100%; /* You can adjust the width if necessary */
-  height: 400px; /* Increase this value to make the container taller */
-  margin-top: 50px; /* You can adjust this to control vertical spacing */
+  height: 400px;
+  margin-top: -15%; /* Increase this value to make the container taller */ /* You can adjust this to control vertical spacing */
 }
