@@ -25,3 +25,8 @@ top: 273px;
 
 
 }
+.model-container {
+    width: 100%; /* You can adjust the width if necessary */
+    height: 500px; /* Increase this value to make the container taller */
+    margin-top: 50px; /* You can adjust this to control vertical spacing */
+}
