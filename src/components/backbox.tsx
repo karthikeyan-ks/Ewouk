@@ -13,7 +13,7 @@ const CarModel = () => {
 
   // Spring animation for moving the car from left to its position
   const { x } = useSpring({
-    from: { x: -5 },   // Starting position off-screen
+    from: { x: -10 },   // Starting position off-screen
     to: { x: 0 },       // End position at the center
     config: { duration: 2000 },  // 2-second animation
     delay: 0,  // No delay, start immediately
