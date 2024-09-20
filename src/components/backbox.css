@@ -36,6 +36,6 @@
 .model-container {
     position: absolute;
   width: 100%; /* You can adjust the width if necessary */
-  height: 4 00px; /* Increase this value to make the container taller */
+  height: 400px; /* Increase this value to make the container taller */
   margin-top: 50px; /* You can adjust this to control vertical spacing */
 }
