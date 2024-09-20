@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:  Berlin Sans FB Demi;;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+}
+
+.navbar {
+  /* Bottom center positioning */
+  position: fixed; /* Fixed at the bottom */
+  bottom: 20px;    /* Adjusts the gap from the bottom */
+  left: 50%;       /* Align to the horizontal center */
+  transform: translateX(-50%); /* Corrects the centering */
+  padding: 20px;
+  width: 600px;
+  height: 8%;
+  background: #000000;
+  border-radius: 42.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;  /* Ensures links are spread evenly across the navbar */
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #864a3b;
+  width: 10px;
+  height: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    width: 100%;   /* Make the navbar fill the screen width */
+    height: auto;  /* Let the height adjust automatically */
+    border-radius: 0; /* Remove border radius on smaller screens */
+    padding: 10px 0;
+  }
+  
+  .navbar-links {
+    flex-direction: column;
+  }
+  
+  .navbar-links li {
+    margin: 10px 0;
+  }
+}
