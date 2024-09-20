@@ -1,27 +1,41 @@
+.box {
+  position: absolute;
+  width: 98%;
+  height: 93%;
+  left: 14px;
+  top: 12px;
 
-.box{
-
-position: absolute;
-width: 98%;
-height: 93%;
-left: 14px;
-top: 12px;
-
-background: linear-gradient(114.65deg, #00060E 1.01%, #233345 52.63%, #000105 97.49%);
-border-radius: 40px;
+  background: linear-gradient(
+    114.65deg,
+    #00060e 1.01%,
+    #233345 52.63%,
+    #000105 97.49%
+  );
+  border-radius: 40px;
+}
+.image-container {
+  width: 100%;
+  height: 264px;
+  display: flex;
+  justify-content: center;
 }
 .image-container img{
-    width: 338px;
-    height: 264px;
+    width: 150px;
+    height: 150px;
 }
-.ewouk-name img{
-    
-
-position: absolute;
-width: 1500.2px;
-height: 436.3px;
-left: 141px;
-top: 273px;
-
-
+.ewouk-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ewouk-name img {
+    position: absolute;
+  width: 60%;
+  height: 30%;
+}
+.model-container {
+    position: absolute;
+  width: 100%; /* You can adjust the width if necessary */
+  height: 4 00px; /* Increase this value to make the container taller */
+  margin-top: 50px; /* You can adjust this to control vertical spacing */
 }
