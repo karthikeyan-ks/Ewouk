@@ -1,0 +1,22 @@
+@keyframes revealAnimation {
+    0% {
+        filter: blur(20px); /* Fully blurred */
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        filter: blur(0); /* No blur */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.image-container img,
+.ewouk-name img {
+    opacity: 0; /* Start with hidden state */
+    animation: revealAnimation 20s ease-out forwards; /* Adjust the timing */
+    filter: blur(100px); /* Correct the filter value */
+}
+
+.unblur {
+    opacity: 1;
+    filter: blur(0);
+}

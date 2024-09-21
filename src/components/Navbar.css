@@ -1,75 +1,88 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family:  Berlin Sans FB Demi;;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.container {
-  flex-grow: 1;
-}
-
 .navbar {
-  /* Bottom center positioning */
-  position: fixed; /* Fixed at the bottom */
-  bottom: 20px;    /* Adjusts the gap from the bottom */
-  left: 50%;       /* Align to the horizontal center */
-  transform: translateX(-50%); /* Corrects the centering */
-  padding: 20px;
-  width: 600px;
-  height: 8%;
-  background: #000000;
-  border-radius: 42.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed; /* Fixed positioning */
+  bottom: 20px;    /* Gap from the bottom */
+  left: 50%;       /* Center horizontally */
+  transform: translateX(-50%); /* Correct centering */
+  
+  width: fit-content;    /* Width of the navbar */
+  height: 8%;      /* Height of the navbar */
+  background: #000000; /* Background color */
+  border-radius: 42.5px; /* Rounded corners */
+  display: flex;    /* Flexbox for layout */
+  justify-content: center; /* Center items */
+  align-items: center; /* Align items vertically */
 }
-
-.navbar-links {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  width: 100%;  /* Ensures links are spread evenly across the navbar */
-}
-
-.navbar-links li {
-  margin: 0 15px;
-}
-
 .navbar-links a {
+  position: relative;   /* For the active indicator */
   color: white;
   text-decoration: none;
   font-size: 24px;
-  transition: color 0.3s;
   font-weight: bold;
+  padding: 20px 20PX;  /* Padding for better coverage */
+  transition: color 0.3s;
+  border-radius: 42.5px; /* Rounded edges for links */
+}
+
+.navbar-links a.active {
+  background: #f5f4f4;  /* Background color for active link */
+  color: white;         /* Text color when active */
+}
+
+/* Ensure no line breaks */
+.navbar-links li {
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.navbar-links li + li {
+  margin-left: 15px; /* Space between links */
+}
+
+.navbar-links {
+  list-style-type: none; /* Remove bullet points */
+  display: flex;         /* Flexbox for links */
+  justify-content: center; /* Center links */
+  width: 100%;          /* Full width of navbar */
+}
+
+.navbar-links li {
+  margin: 0 15px;      /* Space between links */
+}
+
+.navbar-links a {
+  position: relative;   /* For the active indicator */
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  /* Padding for better coverage */
+  transition: color 0.3s;
+  border-radius: 42.5px; /* Rounded edges for links */
+}
+
+.navbar-links a.active {
+  background: #ffffff;  /* Background color for active link */
+  color: rgb(0, 0, 0);         /* Text color when active */
 }
 
 .navbar-links a:hover {
-  color: #864a3b;
-  width: 10px;
-  height: 10px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); /* Light background on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .navbar {
-    width: 100%;   /* Make the navbar fill the screen width */
-    height: auto;  /* Let the height adjust automatically */
-    border-radius: 0; /* Remove border radius on smaller screens */
-    padding: 10px 0;
+    width: 100%;         /* Fill the screen width */
+    height: auto;        /* Let height adjust */
+    border-radius: 0;    /* No border radius on smaller screens */
+    padding: 10px 0;     /* Adjust padding */
   }
   
   .navbar-links {
-    flex-direction: column;
+    flex-direction: column; /* Stack links vertically */
   }
   
   .navbar-links li {
-    margin: 10px 0;
+    margin: 10px 0;      /* Space between links in mobile view */
   }
 }
