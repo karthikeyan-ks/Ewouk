@@ -1,33 +1,41 @@
 // src/index.js
-import ReactDOM from 'react-dom';
+
 import App from './App';
 import './index.css'; // Optional CSS file
-import { LoadingSpinner } from './pages/Loader';
+import  LoadingSpinner  from './pages/Loader'; // Adjust based on your export type
 import { StrictMode } from 'react';
 import { Root, createRoot } from 'react-dom/client';
 
-// Create a basic loading component (this could be more complex if needed)
+// Declare root variable with explicit type
+let root: Root | undefined;
 
-// Render the loading spinner into the #loading div
 const container = document.getElementById('loading');
 
-let root: Root;
 if (container) {
-  root = createRoot(container)
-  console.log()
+  root = createRoot(container);
   root.render(<LoadingSpinner />);
 }
+
 // Simulate data fetching or delay (replace with real async operation)
 setTimeout(() => {
-  root.unmount()
-  // When data is ready, remove the loading spinner and render the main app
   // Unmount the loading component
-  createRoot(document.getElementById('root')).render(
-    <StrictMode>
-      <div className='gradenent-box'>
+  if (root) {
+    root.unmount();
+  }
 
-      </div>
-      <App />
-    </StrictMode>
-  )
+  // Get the main app container
+  const appContainer = document.getElementById('root');
+  if (appContainer) {
+    // When data is ready, remove the loading spinner and render the main app
+    createRoot(appContainer).render(
+      <StrictMode>
+        <div className='gradenent-box'>
+          {/* Additional content can be added here if needed */}
+        </div>
+        <App />
+      </StrictMode>
+    );
+  } else {
+    console.error("Root element not found");
+  }
 }, 3000); // 3-second simulation
