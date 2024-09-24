@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className="navbar-links">
         <li>
           <a 
-            href="#home" 
+            href="/" 
             className={activeLink === 'home' ? 'active' : ''} 
             onClick={() => setActiveLink('home')}
           >
@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
         <li>
   <a 
-    href="#about" 
+    href="/About" 
     className={activeLink === 'about' ? 'active' : ''} 
     onClick={() => setActiveLink('about')}
   >
@@ -28,7 +28,7 @@ const Navbar = () => {
 
         <li>
           <a 
-            href="#services" 
+            href="/team" 
             className={activeLink === 'services' ? 'active' : ''} 
             onClick={() => setActiveLink('services')}
           >
@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
         <li>
           <a 
-            href="#contact" 
+            href="/team" 
             className={activeLink === 'contact' ? 'active' : ''} 
             onClick={() => setActiveLink('contact')}
           >

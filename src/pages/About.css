@@ -1,0 +1,37 @@
+.image-container1 img{
+    position: absolute; /* Allows free positioning */
+    top: 10%; /* Offset from the vertical center */
+    left: 5%; /* Offset from the horizontal center */
+    transform: translate(-60%, -60%);
+    width: 150px;
+    height: 150px;
+}
+
+.Card {
+    width: 75%;
+    height: fit-content;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Allows free positioning */
+    top: 50%; /* Offset from the vertical center */
+    left: 60%; /* Offset from the horizontal center */
+    transform: translate(-60%, -60%); /* Moves the card slightly off-center */
+}
+.Card p {
+    font-size: 1.3em;
+   
+    color: #C2CFE0;
+    font-family: Abel,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: 1.6;
+    
+    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+  }
