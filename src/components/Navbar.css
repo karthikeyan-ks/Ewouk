@@ -1,88 +1,82 @@
 .navbar {
-  position: fixed; /* Fixed positioning */
-  bottom: 20px;    /* Gap from the bottom */
-  left: 50%;       /* Center horizontally */
-  transform: translateX(-50%); /* Correct centering */
-  
-  width: fit-content;    /* Width of the navbar */
-  height: 8%;      /* Height of the navbar */
-  background: #000000; /* Background color */
-  border-radius: 42.5px; /* Rounded corners */
-  display: flex;    /* Flexbox for layout */
-  justify-content: center; /* Center items */
-  align-items: center; /* Align items vertically */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: 8%;
+  background: #000000;
+  border-radius: 42.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .navbar-links a {
-  position: relative;   /* For the active indicator */
+  display: flex; /* Ensure icons and text are aligned horizontally */
+  align-items: center; /* Align icons and text vertically */
   color: white;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  padding: 20px 20PX;  /* Padding for better coverage */
+  padding: 20px 20px;
   transition: color 0.3s;
-  border-radius: 42.5px; /* Rounded edges for links */
+  border-radius: 42.5px;
 }
 
 .navbar-links a.active {
-  background: #f5f4f4;  /* Background color for active link */
-  color: white;         /* Text color when active */
+  background: #ffffff;
+  color: black;
 }
 
-/* Ensure no line breaks */
 .navbar-links li {
-  white-space: nowrap; /* Prevent line breaks */
+  white-space: nowrap;
 }
 
 .navbar-links li + li {
-  margin-left: 15px; /* Space between links */
+  margin-left: 15px;
 }
 
 .navbar-links {
-  list-style-type: none; /* Remove bullet points */
-  display: flex;         /* Flexbox for links */
-  justify-content: center; /* Center links */
-  width: 100%;          /* Full width of navbar */
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .navbar-links li {
-  margin: 0 15px;      /* Space between links */
-}
-
-.navbar-links a {
-  position: relative;   /* For the active indicator */
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  /* Padding for better coverage */
-  transition: color 0.3s;
-  border-radius: 42.5px; /* Rounded edges for links */
-}
-
-.navbar-links a.active {
-  background: #ffffff;  /* Background color for active link */
-  color: rgb(0, 0, 0);         /* Text color when active */
+  margin: 0 15px;
 }
 
 .navbar-links a:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon styling */
+.navbar-links a svg {
+  margin-right: 8px; /* Space between the icon and text */
+  font-size: 18px; /* Adjust icon size */
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .navbar {
-    width: 100%;         /* Fill the screen width */
-    height: auto;        /* Let height adjust */
-    border-radius: 0;    /* No border radius on smaller screens */
-    padding: 10px 0;     /* Adjust padding */
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 10px 0;
   }
-  
+
   .navbar-links {
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: column;
   }
-  
+
   .navbar-links li {
-    margin: 10px 0;      /* Space between links in mobile view */
+    margin: 10px 0;
+  }
+
+  .navbar-links a {
+    justify-content: center; /* Center links in mobile view */
   }
 }
