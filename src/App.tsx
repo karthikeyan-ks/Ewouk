@@ -12,10 +12,6 @@ function App() {
         {/* Ensure this renders properly */}
         <Backbox />
         <Navbar /> 
-        <div className='App'>
-          {/* Routes without Outlet */}
-         
-        </div>
         
       {/* Ensure Footer is rendered after all content */}
       

@@ -8,7 +8,6 @@ import { Team } from '../pages/Team';
 import {About} from '../pages/About';
 
 
-
 const Backbox = () => {
   return (
     <BrowserRouter>
