@@ -1,14 +1,16 @@
 import React from 'react';
-import './Sponsers.css'; // Import the CSS file for styling
+import './Team.css'; // Import the CSS file for styling
 import logo from '../static/image/image.png';
 export const Sponsers =() => {
+  
+    
 
         return (
-            <div className="team-container1">
-                <div className='image-container2'>
+            <div className="team-container">
+                <div className='image-container1'>
                     <img src={logo} alt="Ewouk-logo" />
                 </div>
-                
+                {/* Other content goes here */}
             </div>
         );
     };

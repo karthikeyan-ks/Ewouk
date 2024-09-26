@@ -1,17 +1,3 @@
-.image-container1 {
-    position: relative; /* Necessary for absolute positioning of child elements */
-    width: 100%; /* Ensure it takes the full width of the parent */
-    height: 200px; /* Set a specific height as needed */
-}
-
-.image-container1 img {
-    position: absolute; /* Allows free positioning */
-    top: 10%; /* Offset from the vertical center */
-    left: 5%; /* Offset from the horizontal center */
-    transform: translate(-60%, -60%);
-    width: 150px; /* Adjust the width */
-    height: 150px; /* Adjust the height */
-}
 
 .team-container {
     text-align: center;
