@@ -1,10 +1,8 @@
 import React from 'react';
 import './Team.css'; // Import the CSS file for styling
-
-// Import images directly if they are inside the src folder
 import dpImage from '../static/image/Dp.jpeg'; 
-
-const teamMembers = [
+import logo from '../static/image/image.png';
+const executivePanel = [
     { name: 'Shanu Jaimon Cherian', photo: dpImage, position: 'Captain' },
     { name: 'Ashwin Girish', photo: dpImage, position: 'Team Manager' },
     { name: 'Sidharth M Salim', photo: dpImage, position: 'Mechanical Head' },
@@ -12,25 +10,71 @@ const teamMembers = [
     { name: 'Divina Ann Benoy', photo: dpImage, position: 'Fabrication Head' },
     { name: 'Jayadev S Nair', photo: dpImage, position: 'Driver' },
     { name: 'Mohammad Farhan Thangal', photo: dpImage, position: 'Treasurer' },
-    // Add more team members as needed
+];
+
+const teamMembers = [
+    { name: 'Team Member 1', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+    { name: 'Team Member 2', photo: dpImage, position: 'Member' },
+   
 ];
 
 export const Team = () => {
     return (
+        
         <div className="team-container">
-            <h1>Executive Panel</h1> {/* Fixed the spelling */}
-            
-            <div className="team-row">
-                {teamMembers.map((member, index) => (
-                    <div key={index} className="team-member">
+             
+            <div className='image-container1'>
+                <img src={logo} alt="Ewouk-logo" />
+            </div>
+            <h1>Executive Panel</h1>
+            <div className="team-row executive-row">
+                {executivePanel.map((member, index) => (
+                    <div key={index} className="team-member executive-member">
                         <img src={member.photo} alt={member.name} className="team-photo" />
                         <p>{member.name}</p>
-                        <div className="position">{member.position}</div> {/* Position text */}
+                        <div className="position">{member.position}</div>
                     </div>
                 ))}
             </div>
 
-            <h1>Team Member</h1> {/* Moved inside the main container */}
+            <h1>Team Members</h1>
+            <div className="team-row member-row">
+                {teamMembers.map((member, index) => (
+                    <div key={index} className="team-member">
+                        <img src={member.photo} alt={member.name} className="team-photo small-photo" />
+                        <p>{member.name}</p>
+                        <div className="position">{member.position}</div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

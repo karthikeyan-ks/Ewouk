@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
         <li>
           <a 
-            href="/team" 
+            href="/sponsers" 
             className={activeLink === 'contact' ? 'active' : ''} 
             onClick={() => setActiveLink('contact')}
           >

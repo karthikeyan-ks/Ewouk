@@ -1,3 +1,18 @@
+.image-container1 {
+    position: relative; /* Necessary for absolute positioning of child elements */
+    width: 100%; /* Ensure it takes the full width of the parent */
+    height: 200px; /* Set a specific height as needed */
+}
+
+.image-container1 img {
+    position: absolute; /* Allows free positioning */
+    top: 10%; /* Offset from the vertical center */
+    left: 5%; /* Offset from the horizontal center */
+    transform: translate(-60%, -60%);
+    width: 150px; /* Adjust the width */
+    height: 150px; /* Adjust the height */
+}
+
 .team-container {
     text-align: center;
     padding: 20px;
@@ -9,51 +24,52 @@
     justify-content: center; /* Center items horizontally */
 }
 
-.team-member {
+/* Executive member styles */
+.executive-member {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px; /* Space between team members */
-    position: relative; /* Needed for absolute positioning of hover content */
+    margin: 10px; /* Space between members */
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-.team-member:hover {
+.executive-member:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .team-photo {
-    width: 150px; /* Fixed width for uniformity */
-    height: 150px; /* Fixed height for uniformity */
-    border-radius: 50%; /* Make the photos circular */
-    object-fit: cover; /* Crop the image to fill the space */
-    transition: background-color 0.3s ease; /* Smooth background color change */
-    z-index: 1; /* Ensure photo stays below position text */
+    width: 150px; /* Standard size for executive members */
+    height: 150px;
+    border-radius: 50%; /* Circular photos */
+    object-fit: cover; /* Crop image to fill the space */
 }
 
-.team-member:hover .team-photo {
-    background: linear-gradient(116.63deg, rgba(32, 0, 52, 0.3) 2.39%, rgba(103, 0, 167, 0.3) 50.84%, rgba(42, 0, 68, 0.3) 100%);
+/* Team members (non-executive) should be smaller */
+.small-photo {
+    width: 80px; /* Smaller size for team members */
+    height: 80px; /* Adjust height accordingly */
+}
+
+.team-member {
+    flex: 0 1 100px; /* Set a base size for members */
+    max-width: 100px; /* Prevent members from getting too large */
+    margin: 10px; /* Space between members */
 }
 
 .team-member p {
-    margin-top: 10px; /* Space between the photo and name */
-    font-size: 1.1em; /* Adjust font size as needed */
+    margin-top: 5px; /* Reduced space between the photo and name */
+    font-size: 0.9em; /* Smaller font size for better fit */
     color: #C2CFE0; /* Customize text color */
 }
 
 .team-member .position {
-    position: absolute; /* Position the position text over the image */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Correct the position shift */
-    color: #ffffff; /* Text color */
-    font-size: 1em; /* Font size */
-    background: linear-gradient(116.63deg, rgba(32, 0, 52, 0.3) 2.39%, rgba(103, 0, 167, 0.3) 50.84%, rgba(42, 0, 68, 0.3) 100%); /* Semi-transparent background */
-    padding: 5px 10px; /* Padding around the text */
-    border-radius: 10px; /* Rounded corners */
-    opacity: 0; /* Hide by default */
+    color: #ffffff;
+    font-size: 0.8em; /* Smaller font size for position */
+    background: linear-gradient(116.63deg, rgba(32, 0, 52, 0.3) 2.39%, rgba(103, 0, 167, 0.3) 50.84%, rgba(42, 0, 68, 0.3) 100%);
+    padding: 2px 5px; /* Reduced padding for position */
+    border-radius: 10px;
+    opacity: 0; /* Hidden by default */
     transition: opacity 0.3s ease; /* Smooth fade in/out */
-    z-index: 2; /* Ensure position text is above the image */
 }
 
 .team-member:hover .position {
