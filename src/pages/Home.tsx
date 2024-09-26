@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import logo from '../static/image/image.png';
 import logo1 from '../static/image/image copy.png';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -7,12 +7,20 @@ import { useSpring, a } from '@react-spring/three';
 
 // Car Model Component
 const CarModel = () => {
-    const { scene } = useGLTF('/src/static/3d/WORKING RENDER.glb');  // 3D model
     const carGroup = useRef<any>();
+    let scene;
+
+    // Attempt to load the GLB model
+    try {
+        const { scene: loadedScene } = useGLTF('/static/3d/WORKING RENDER.glb'); // Updated path
+        scene = loadedScene;
+    } catch (error) {
+        console.error("Error loading GLB model:", error);
+    }
 
     const { x } = useSpring({
         from: { x: -5 },  // Starting position off-screen
-        to: { x: 0 },    // End position at the center
+        to: { x: 0 },     // End position at the center
         config: { duration: 2000 },  // 2-second animation
     });
 
@@ -24,7 +32,7 @@ const CarModel = () => {
 
     return (
         <a.group ref={carGroup} scale={[2.5, 2.5, 2.5]}>
-            <primitive object={scene} />
+            {scene && <primitive object={scene} />} {/* Render only if scene is loaded */}
         </a.group>
     );
 };
@@ -34,7 +42,6 @@ export const Home = () => {
     const ewoukNameRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // After component mounts, add class to trigger the animation
         const timer = setTimeout(() => {
             if (imageContainerRef.current && ewoukNameRef.current) {
                 imageContainerRef.current.classList.add('unblur');
@@ -42,7 +49,7 @@ export const Home = () => {
             }
         }, 20000); // Match delay to the animation duration
 
-        return () => clearTimeout(timer); // Cleanup timer on unmount
+        return () => clearTimeout(timer);
     }, []);
 
     return (
