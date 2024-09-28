@@ -1,82 +1,98 @@
 .navbar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: fit-content;
-  height: 8%;
-  background: #000000;
-  border-radius: 42.5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-links a {
-  display: flex; /* Ensure icons and text are aligned horizontally */
-  align-items: center; /* Align icons and text vertically */
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 20px 20px;
-  transition: color 0.3s;
-  border-radius: 42.5px;
-}
-
-.navbar-links a.active {
-  background: #ffffff;
-  color: black;
-}
-
-.navbar-links li {
-  white-space: nowrap;
-}
-
-.navbar-links li + li {
-  margin-left: 15px;
-}
-
-.navbar-links {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.navbar-links li {
-  margin: 0 15px;
-}
-
-.navbar-links a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Icon styling */
-.navbar-links a svg {
-  margin-right: 8px; /* Space between the icon and text */
-  font-size: 18px; /* Adjust icon size */
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-    padding: 10px 0;
+    position: fixed;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content; /* Adjust to content */
+    height: 8%; /* Adjust to content */
+    background: #000000;
+    border-radius: 42.5px;
+    padding: 10px 20px; /* Add padding for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
   }
-
+  
   .navbar-links {
-    flex-direction: column;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align links vertically */
   }
-
+  
   .navbar-links li {
-    margin: 10px 0;
+    margin: 0 15px; /* Space between links */
   }
-
+  
   .navbar-links a {
-    justify-content: center; /* Center links in mobile view */
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px; /* Adjust padding for better spacing */
+    transition: color 0.3s;
+    border-radius: 42.5px;
+    display: flex; /* To align icons and text horizontally */
+    align-items: center; /* Center icon and text vertically */
+    flex-direction: row; /* Default to row layout (icon next to text) */
   }
-}
+  
+  .navbar-links a.active {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .navbar-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon styling */
+  .nav-icon {
+    width: 20px; /* Icon size */
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle; /* Align icons with text */
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 600px) {
+    .navbar {
+      width: fit-content;
+      height: 8%; /* Full width on mobile */
+      border-radius: 40px; /* No border radius */
+      padding: 10px 0; /* Padding for mobile */
+      bottom: 18px; /* Stick to the bottom */
+      left: 2%; /* Align to left */
+      transform: none; /* Remove horizontal centering */
+      justify-content: space-around; /* Space the links evenly */
+    }
+  
+    .navbar-links {
+      flex-direction: row; /* Keep the links in a row */
+      justify-content: space-evenly; /* Even spacing between links */
+      width: 100%; /* Full width for better spacing */
+      padding: 0 10px; /* Padding on both sides */
+    }
+  
+    .navbar-links li {
+      margin: 0 5px; /* Reduced margin for better fit */
+    }
+  
+    .navbar-links a {
+      font-size: 16px; /* Smaller font for mobile */
+      padding: 10px 8px; /* Adjusted padding */
+      flex-direction: column; /* Stack icon above the text */
+      align-items: center; /* Center icon and text vertically */
+    }
+  
+    /* Show icons next to the text on mobile */
+    .nav-icon {
+      margin-bottom: 4px; /* Space between icon and text */
+      width: 24px; /* Slightly bigger icon for mobile */
+      height: 24px;
+    }
+  }
+  

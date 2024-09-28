@@ -1,3 +1,29 @@
+.image-container img,
+.ewouk-name img {
+    opacity: 0; /* Start with hidden state */
+    animation: revealAnimation 20s ease-out forwards; /* Adjust the timing */
+    filter: blur(100px); /* Correct the filter value */
+}
+
+.unblur {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.image-container, .ewouk-name {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-50px); /* Start position */
+    transition: all 2s ease-in-out;
+}
+
+.unblur {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0); /* End position with bounce */
+    animation: bounce 0.8s ease-in-out;
+}
+
 @keyframes revealAnimation {
     0% {
         filter: blur(20px); /* Fully blurred */
@@ -9,14 +35,22 @@
     }
 }
 
-.image-container img,
-.ewouk-name img {
-    opacity: 0; /* Start with hidden state */
-    animation: revealAnimation 20s ease-out forwards; /* Adjust the timing */
-    filter: blur(100px); /* Correct the filter value */
+@keyframes bounce {
+    0% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
-.unblur {
-    opacity: 1;
-    filter: blur(0);
+/* Make the car container bigger */
+.model-container {
+    height: 150%; /* Increase height for better visibility */
+    width: 100%; /* Full width */
+    position: relative;
+    overflow: hidden; /* Prevents overflow when the car moves */
 }

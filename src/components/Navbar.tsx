@@ -1,7 +1,6 @@
 import './Navbar.css';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faUsers, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { FaHome, FaInfoCircle, FaUsers, FaHandshake } from 'react-icons/fa'; // Import icons from React Icons
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -15,34 +14,34 @@ const Navbar = () => {
             className={activeLink === 'home' ? 'active' : ''} 
             onClick={() => setActiveLink('home')}
           >
-            <FontAwesomeIcon icon={faHome} /> HOME
+            <FaHome className="nav-icon" /> HOME
           </a>
         </li>
         <li>
           <a 
-            href="/About" 
+            href="/about" 
             className={activeLink === 'about' ? 'active' : ''} 
             onClick={() => setActiveLink('about')}
           >
-            <FontAwesomeIcon icon={faInfoCircle} /> ABOUT US
+            <FaInfoCircle className="nav-icon" /> ABOUT US
           </a>
         </li>
         <li>
           <a 
             href="/team" 
-            className={activeLink === 'services' ? 'active' : ''} 
-            onClick={() => setActiveLink('services')}
+            className={activeLink === 'team' ? 'active' : ''} 
+            onClick={() => setActiveLink('team')}
           >
-            <FontAwesomeIcon icon={faUsers} /> TEAM
+            <FaUsers className="nav-icon" /> TEAM
           </a>
         </li>
         <li>
           <a 
             href="/sponsors" 
-            className={activeLink === 'contact' ? 'active' : ''} 
-            onClick={() => setActiveLink('contact')}
+            className={activeLink === 'sponsors' ? 'active' : ''} 
+            onClick={() => setActiveLink('sponsors')}
           >
-            <FontAwesomeIcon icon={faHandshake} /> SPONSORS
+            <FaHandshake className="nav-icon" /> SPONSORS
           </a>
         </li>
       </ul>
