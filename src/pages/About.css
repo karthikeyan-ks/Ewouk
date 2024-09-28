@@ -1,16 +1,17 @@
 .image-container1 img {
-    position: absolute; /* Allows free positioning */
-    top: 10%; /* Offset from the vertical center */
-    left: 5%; /* Offset from the horizontal center */
-    transform: translate(-60%, -60%);
-    width: 150px; /* Fixed size for larger screens */
-    height: 150px; /* Fixed size for larger screens */
+    position: absolute;
+    top: 10%; 
+    left: 5%; 
+    transform: translate(-50%, -50%);
+    width: 10vw; /* Adjusted for responsive size */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Card styling */
 .Card {
     width: 75%; /* Base width */
-    height: fit-content; /* Automatic height based on content */
+    max-width: 800px; /* Limit maximum width for larger screens */
+    height: fit-content; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,15 +19,15 @@
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: absolute; /* Allows free positioning */
-    top: 50%; /* Center vertically */
-    left: 60%; /* Center horizontally */
-    transform: translate(-60%, -60%); /* Moves the card slightly off-center */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); 
 }
 
 /* Paragraph styling */
 .Card p {
-    font-size: 1.3em; /* Base font size */
+    font-size: 1.3em; 
     color: #C2CFE0;
     font-family: Abel, sans-serif;
     font-weight: 400;
@@ -38,55 +39,59 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
     .image-container1 img {
-        width: 100px; /* Smaller size for tablets */
-        height: 100px; /* Maintain aspect ratio */
-        top: 5%; /* Slightly adjusted vertical position */
-        left: 10%; /* Adjust horizontal position */
-        transform: translate(-50%, -50%); /* Center adjustment */
+        width: 100px; 
+        height: auto; 
+        top: 5%; 
+        left: 10%; 
+        transform: translate(-50%, -50%); 
     }
 
     .Card {
-        width: 90%; /* Wider card for smaller screens */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Center adjustment */
-        top: 55%; /* Adjusted vertical positioning */
+        width: 90%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        top: 55%; 
     }
 
     .Card p {
-        font-size: 1.1em; /* Slightly smaller font size */
-        margin: 0 0 10px 0; /* Add margin below the paragraph */
-        text-align: center; /* Center text alignment */
+        font-size: .8em; 
+        margin: 0 0 10px 0; 
+        text-align: center; 
     }
 
-    /* Center the heading on mobile */
-    .Card h1, .Card h2 { /* Adjust for h1 and h2 or any other heading tags you are using */
-        margin: 0 0 10px 0; /* Add margin below the heading */
-        text-align: center; /* Center text alignment */
+    .Card h1, .Card h2 { 
+        margin: 0 0 10px 0; 
+        text-align: center; 
     }
 }
 
-@media (max-width: 480px) {
+/* Larger screens adjustments */
+@media (min-width: 1200px) {
     .image-container1 img {
-        width: 80px; /* Smaller size for mobile */
-        height: 80px; /* Maintain aspect ratio */
-        top: 5%; /* Keep vertical position */
-        left: 15%; /* Adjust horizontal position */
-        transform: translate(-50%, -50%); /* Center adjustment */
+        width: 150px; /* Fixed size for larger screens */
+        height: auto; 
     }
 
     .Card {
-        width: 95%; /* Almost full width on mobile */
-        top: 50%; /* Further adjusted vertical position */
+        width: 60%; /* Adjust card width */
+        padding: 30px; /* More padding on larger screens */
     }
 
     .Card p {
-        font-size: 1em; /* Smaller font size for mobile */
-        margin: 0 0 10px 0; /* Add margin below the paragraph */
+        font-size: 1.4em; /* Larger font size */
     }
 
-    /* Center the heading on mobile */
     .Card h1, .Card h2 {
-        margin: 0 0 20px 0; /* Add margin below the heading */
-        text-align: center; /* Center text alignment */
+        font-size: 2em; /* Larger heading font size */
+    }
+}
+
+@media (min-width: 1600px) {
+    .Card {
+        width: 50%; /* Wider card */
+    }
+
+    .Card p {
+        font-size: 1.5em; /* Even larger font size */
     }
 }

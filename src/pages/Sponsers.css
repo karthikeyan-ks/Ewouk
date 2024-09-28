@@ -1,7 +1,7 @@
 .team-container {
     text-align: center;
     padding: 20px;
-   /* Background color of the main container */
+    /* Background color of the main container */
 }
 
 .heading {
@@ -14,14 +14,11 @@
     justify-content: center; /* Center the items */
     margin-top: 20px; /* Space between the heading and sponsors */
 }
-.sponsercard{
-    width: 100px;
-    height: fit-content;
-}
+
 .sponsor-card1 {
     position: relative;
-    width: 200px; /* Width of the card */
-    height: 300px; /* Height of the card */
+    width: 150px; /* Base width of the card */
+    height: 250px; /* Height of the card */
     margin: 10px; /* Space between cards */
     background: #000000; /* Black background */
     border-radius: 37px; /* Rounded corners */
@@ -34,15 +31,52 @@
 }
 
 .sponsor-logo {
-    width: 100%; /* Make the image take the full width */
-    height: 100%; /* Make the image take the full height */
+    width: 80%; /* Adjusted width for logos */
+    height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Maintain aspect ratio */
     object-position: center; /* Center the image */
 }
-
 
 .sponsor-name {
     color: #ffffff; /* White text color */
     margin-top: 5px; /* Space between logo and name */
     font-size: 1em; /* Font size */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .sponsor-card1 {
+        padding-top: 10px;
+        width: 120px; /* Adjust width for tablets */
+        height: auto;
+        background: #000000 /* Allow height to adjust based on content */
+    }
+}
+
+@media (max-width: 768px) {
+    .sponsor-card1 {
+        padding-top: 10px;
+        width: 100px; /* Smaller width for mobile */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .sponsor-logo {
+        width: 70%; /* Smaller logo for mobile */
+    }
+}
+
+@media (min-width: 1200px) {
+    .sponsor-card1 {
+        padding-top: 10px;
+        width: 180px; /* Slightly larger cards for larger screens */
+        height: 280px; /* Adjust height */
+    }
+}
+
+@media (min-width: 1600px) {
+    .sponsor-card1 {
+        padding-top: 10px;
+        width: 200px; /* Larger cards for very large screens */
+        height: 300px; /* Keep consistent height */
+    }
 }
