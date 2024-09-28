@@ -1,9 +1,9 @@
 .box {
   position: absolute;
   width: 98%;
-  height: 90%;
- 
-  padding-bottom: 25px;
+  height: fit-content;
+  min-height: 93%;
+  padding-bottom: 25  px;
   left: 14px;
   top: 12px;
 
@@ -41,28 +41,4 @@ position: relative  ;
   width: 100%; /* You can adjust the width if necessary */
   height: 400px;
   margin-top: -15%; /* Increase this value to make the container taller */ /* You can adjust this to control vertical spacing */
-}
-@media (max-width: 600px) {
-  .box {
-    top: 5px;
-    padding-bottom: 15px;
-    width: 95%;
-    height: 95%;
-  }
-
-  .image-container img,
-  .ewouk-name img {
-    max-width: 80%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .ewouk-name {
-    margin-top: 40%; /* Adjust space above the ewouk-name */
-  }
-
-  .model-container {
-    height: 300px; /* Adjust height for mobile */
-    margin-top: 20%; /* Increased margin to push model down */
-  }
 }

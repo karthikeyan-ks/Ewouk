@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 const Model = () => {
-    // Load the GLB file
+    // Load the GLB file  
     const { scene } = useGLTF('/path/to/your/model.glb');
     return <primitive object={scene} />;
   };
@@ -17,7 +17,7 @@ const GLBViewer = () => {
         
         {/* Add camera controls to orbit around the object */}
         <OrbitControls />
-      </Canvas>
+      </Canvas>             
     );
   };
   

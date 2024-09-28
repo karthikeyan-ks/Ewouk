@@ -1,6 +1,7 @@
 // src/index.js
 
 import App from './App';
+import { Provider } from './components/navContext';
 import './index.css'; // Optional CSS file
 import  LoadingSpinner  from './pages/Loader'; // Adjust based on your export type
 import { StrictMode } from 'react';
@@ -38,4 +39,4 @@ setTimeout(() => {
   } else {
     console.error("Root element not found");
   }
-}, 3000); // 3-second simulation
+}, 1000); // 3-second simulation
