@@ -1,4 +1,3 @@
-import React from 'react';
 import './Team.css'; // Import the CSS file for styling
 import dpImage from '../static/image/Dp.jpeg'; 
 import logo from '../static/image/image.png';
