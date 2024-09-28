@@ -1,8 +1,21 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .image-container img,
 .ewouk-name img {
-    opacity: 0; /* Start with hidden state */
-    animation: revealAnimation 20s ease-out forwards; /* Adjust the timing */
-    filter: blur(100px); /* Correct the filter value */
+    width: 100%;
+    max-width: 300px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0;
+    animation: revealAnimation 2s ease-out forwards;
+    filter: blur(100px); /* Start with blur */
 }
 
 .unblur {
@@ -10,7 +23,8 @@
     filter: blur(0);
 }
 
-.image-container, .ewouk-name {
+.image-container,
+.ewouk-name {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(-50px); /* Start position */
@@ -20,18 +34,19 @@
 .unblur {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0); /* End position with bounce */
+    transform: translateY(0);
     animation: bounce 0.8s ease-in-out;
 }
 
+/* Keyframe animations */
 @keyframes revealAnimation {
     0% {
-        filter: blur(20px); /* Fully blurred */
-        opacity: 0; /* Fully transparent */
+        filter: blur(20px);
+        opacity: 0;
     }
     100% {
-        filter: blur(0); /* No blur */
-        opacity: 1; /* Fully visible */
+        filter: blur(0);
+        opacity: 1;
     }
 }
 
@@ -49,8 +64,58 @@
 
 /* Make the car container bigger */
 .model-container {
-    height: 150%; /* Increase height for better visibility */
-    width: 100%; /* Full width */
+    height: 100%;
+    width: 100%;
     position: relative;
-    overflow: hidden; /* Prevents overflow when the car moves */
+    overflow: hidden;
+}
+
+/* Additional Responsive Styles for mobile */
+@media (max-width: 600px) {
+    .image-container img,
+    .ewouk-name img {
+        max-width: 80%;
+        margin: 0 auto; /* Center images horizontally */
+        display: block;
+    }
+
+    .ewouk-name {
+        width: 100%;
+        text-align: center; /* Ensure text is centered */
+        margin-top: 20px;
+    }
+
+    .model-container {
+        height: 75vh;
+        margin-top: 30px;
+    }
+
+    .home-container {
+        justify-content: flex-start;
+        padding: 10px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 400px) {
+    .image-container img,
+    .ewouk-name img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .ewouk-name {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .model-container {
+        height: 60vh;
+        margin-top: 20px;
+    }
+
+    .home-container {
+        height: auto;
+        justify-content: flex-start;
+    }
 }

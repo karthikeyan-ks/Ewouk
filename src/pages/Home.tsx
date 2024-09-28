@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import logo from '../static/image/image.png';
 import logo1 from '../static/image/image copy.png';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -6,10 +6,8 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useSpring, a } from '@react-spring/three';
 
 // Car Model Component
-// Car Model Component
-// Car Model Component
 const CarModel = () => {
-    const { scene } = useGLTF('/src/static/3d/WORKING RENDER.glb');  // 3D model
+    const { scene } = useGLTF('/src/static/3d/WORKINGRENDER.glb');  // 3D model
     const carGroup = useRef<any>();
 
     // Spring animation for bouncing in from the top
@@ -32,7 +30,6 @@ const CarModel = () => {
     );
 };
 
-
 export const Home = () => {
     const imageContainerRef = useRef<HTMLDivElement>(null);
     const ewoukNameRef = useRef<HTMLDivElement>(null);
@@ -49,7 +46,7 @@ export const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className='home-container'>
             <div className='image-container' ref={imageContainerRef}>
                 <img src={logo} alt="Ewouk-logo" />
             </div>

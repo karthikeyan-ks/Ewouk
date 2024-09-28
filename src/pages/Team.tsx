@@ -53,7 +53,7 @@ export const Team = () => {
             <div className='image-container1'>
                 <img src={logo} alt="Ewouk-logo" />
             </div>
-            <h1>Executive Panel</h1>
+            <h1 className='ex'>Executive Panel</h1>
             <div className="team-row executive-row">
                 {executivePanel.map((member, index) => (
                     <div key={index} className="team-member executive-member">
@@ -64,13 +64,13 @@ export const Team = () => {
                 ))}
             </div>
 
-            <h1>Team Members</h1>
+            <h1 className='team'>Team Members</h1>
             <div className="team-row member-row">
                 {teamMembers.map((member, index) => (
-                    <div key={index} className="team-member">
+                    <div key={index} className="team-member1">
                         <img src={member.photo} alt={member.name} className="team-photo small-photo" />
                         <p>{member.name}</p>
-                        <div className="position">{member.position}</div>
+                        <div className="position1">{member.position}</div>
                     </div>
                 ))}
             </div>

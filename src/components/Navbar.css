@@ -58,18 +58,21 @@
   }
   
   /* Mobile-specific adjustments */
-  @media (max-width: 600px) {
+  @media (min-width: 601px) and (max-width: 1024px) {
     .navbar {
-      width: fit-content;
-      height: 8%; /* Full width on mobile */
-      border-radius: 40px; /* No border radius */
-      padding: 10px 0; /* Padding for mobile */
-      bottom: 18px; /* Stick to the bottom */
-      left: 2%; /* Align to left */
-      transform: none; /* Remove horizontal centering */
-      justify-content: space-around; /* Space the links evenly */
-    }
-  
+        
+            width: fit-content; 
+            height: 8%; /* Full width on mobile */
+            border-radius: 40px; /* Rounded corners */
+            padding: 10px 0; /* Padding for mobile */
+            position: fixed; /* Fix position to the screen */
+            bottom: 18px; /* Distance from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Offset by half its width to truly center it */
+            justify-content: space-around; /* Space around content */
+        }
+        
+    
     .navbar-links {
       flex-direction: row; /* Keep the links in a row */
       justify-content: space-evenly; /* Even spacing between links */
@@ -82,17 +85,59 @@
     }
   
     .navbar-links a {
-      font-size: 16px; /* Smaller font for mobile */
-      padding: 10px 8px; /* Adjusted padding */
+        font-size: 1rem; /* 16px font size for mobile */
+        padding: 0.625rem 0.5rem;  /* Adjusted padding */
       flex-direction: column; /* Stack icon above the text */
-      align-items: center; /* Center icon and text vertically */
+      align-items: center; 
+      white-space: nowrap; /* Center icon and text vertically */
     }
   
     /* Show icons next to the text on mobile */
     .nav-icon {
-      margin-bottom: 4px; /* Space between icon and text */
-      width: 24px; /* Slightly bigger icon for mobile */
-      height: 24px;
+        margin-right: 0.25rem; /* 4px space between icon and text */
+        width: 1.5rem; /* 24px icon size for mobile */
+        height: 1.5rem; 
+    }
+  }
+  @media (max-width: 601px) {
+    .navbar {
+        
+            width: fit-content; 
+            height: 8%; /* Full width on mobile */
+            border-radius: 40px; /* Rounded corners */
+            padding: 10px 0; /* Padding for mobile */
+            position: fixed; /* Fix position to the screen */
+            bottom: 18px; /* Distance from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Offset by half its width to truly center it */
+            justify-content: space-around; /* Space around content */
+        }
+        
+    
+    .navbar-links {
+      flex-direction: row; /* Keep the links in a row */
+      justify-content: space-evenly; /* Even spacing between links */
+      width: 100%; /* Full width for better spacing */
+      padding: 0 10px; /* Padding on both sides */
+    }
+  
+    .navbar-links li {
+      margin: 0 5px; /* Reduced margin for better fit */
+    }
+  
+    .navbar-links a {
+        font-size: 1rem; /* 16px font size for mobile */
+        padding: 0.625rem 0.5rem;  /* Adjusted padding */
+      flex-direction: column; /* Stack icon above the text */
+      align-items: center; 
+      white-space: nowrap; /* Center icon and text vertically */
+    }
+  
+    /* Show icons next to the text on mobile */
+    .nav-icon {
+        margin-right: 0.25rem; /* 4px space between icon and text */
+        width: 1.5rem; /* 24px icon size for mobile */
+        height: 1.5rem; 
     }
   }
   
