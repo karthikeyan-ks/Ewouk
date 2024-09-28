@@ -58,7 +58,7 @@ const Navbar = () => {
         </li>
         <li>
           <a
-            href="/sponsors"
+            href="/sponsers"
             className={activeLink === 'sponsors' ? 'active' : ''}
             onClick={() => {
               setActiveLink('sponsors')
