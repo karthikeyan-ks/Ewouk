@@ -63,6 +63,6 @@ position: relative  ;
 
   .model-container {
     height: 300px; /* Adjust height for mobile */
-    margin-top: 20%; /* Increased margin to push model down */
+    margin-top: 0% /* Increased margin to push model down */
   }
 }
