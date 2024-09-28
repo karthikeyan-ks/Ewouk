@@ -37,7 +37,7 @@ const Navbar = () => {
             href="/about"
             className={activeLink === 'about' ? 'active' : ''}
             onClick={() => {
-              setActiveLink('about')
+              setActiveLink('About')
               localStorage.setItem('navbar',"1")
             }}
           >
