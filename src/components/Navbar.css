@@ -12,8 +12,13 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Ensure it's above other content */
+    filter: drop-shadow(9px 13px 4px rgba(0, 0, 0, 0.7));
   }
-  
+  /* Group 168 */
+
+
+
+
   .navbar-links {
     list-style-type: none;
     display: flex;
