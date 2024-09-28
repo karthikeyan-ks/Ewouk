@@ -1,14 +1,48 @@
-.image-container2 {
-    position: relative; /* Necessary for absolute positioning of child elements */
-    width: 100%; /* Ensure it takes the full width of the parent */
-    height: 200px; /* Set a specific height as needed */
+.team-container {
+    text-align: center;
+    padding: 20px;
+   /* Background color of the main container */
 }
 
-.image-container2 img {
-    position: absolute; /* Allows free positioning */
-    top: 35%; /* Offset from the vertical center */
-    left: 5%; /* Offset from the horizontal center */
-    transform: translate(-60%, -60%);
-    width: 150px; /* Adjust the width */
-    height: 150px; /* Adjust the height */
+.heading {
+    margin-top: 20px; /* Space above the heading */
+}
+
+.sponsors-grid {
+    display: flex; /* Use flexbox for a horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center the items */
+    margin-top: 20px; /* Space between the heading and sponsors */
+}
+.sponsercard{
+    width: 100px;
+    height: fit-content;
+}
+.sponsor-card1 {
+    position: relative;
+    width: 200px; /* Width of the card */
+    height: 300px; /* Height of the card */
+    margin: 10px; /* Space between cards */
+    background: #000000; /* Black background */
+    border-radius: 37px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center content */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+.sponsor-logo {
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+    object-fit: contain; /* Maintain aspect ratio */
+    object-position: center; /* Center the image */
+}
+
+
+.sponsor-name {
+    color: #ffffff; /* White text color */
+    margin-top: 5px; /* Space between logo and name */
+    font-size: 1em; /* Font size */
 }

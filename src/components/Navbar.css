@@ -29,6 +29,7 @@
     position: relative;
     color: white;
     text-decoration: none;
+    white-space: nowrap;
     font-size: 24px;
     font-weight: bold;
     padding: 10px 15px; /* Adjust padding for better spacing */
@@ -40,9 +41,11 @@
   }
   
   .navbar-links a.active {
-    background: #ffffff;
-    color: #000000;
+    background: #ffffff; /* White background for the active link */
+    color: #000000; /* Black text for the active link */
+    transition: background 0.3s ease-in-out 0s;/* Smooth transition */
   }
+  
   
   .navbar-links a:hover {
     color: #ffffff;
