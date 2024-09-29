@@ -1,5 +1,4 @@
-/* Ensure full height and no scrollbars */
-html, body {
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -8,32 +7,31 @@ html, body {
 
 .video-container {
     position: relative;
-    width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrollbars */
+    overflow: hidden;
 }
 
 .background-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vw; /* Cover the full viewport width */
-    height: 100vh; /* Cover the full viewport height */
-    object-fit: cover; /* Ensure the video covers the entire area */
-    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: 1;
+    transform: translate(-50%, -50%);
 }
 
 .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 2;
-    font-size: 5rem; /* Adjust size as needed */
-    color: white;
-    text-align: center;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+    left: 10%;
+    top: 25%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative  ;
+    width: 80%;
+    height: 50%;
 }

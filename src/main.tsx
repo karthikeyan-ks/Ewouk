@@ -3,7 +3,7 @@
 import App from './App';  
 import './index.css'; // Optional CSS file
 import  LoadingSpinner  from './pages/Loader'; // Adjust based on your export type
-import { StrictMode } from 'react';
+import { StrictMode } from 'react'; 
 import { Root, createRoot } from 'react-dom/client';  
 
 // Declare root variable with explicit type

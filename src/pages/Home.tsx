@@ -5,8 +5,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useSpring, a } from '@react-spring/three';
 import myModel from '../static/3d/WORKINGRENDER.glb';
-import './Home.css'
 import video from '../static/video/Video-24.mp4'
+import './Home.css'
 
 
 // Car Model Component
@@ -54,15 +54,12 @@ export const Home = () => {
             <div className='image-container' ref={imageContainerRef}>
                 <img src={logo} alt="Ewouk-logo" />
             </div>
-            <div className='ewouk-name' ref={ewoukNameRef}>
-                <div className="video-container">
-                    <video autoPlay muted loop className="background-video">
-                        <source src={video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <h1 className="overlay-text">Your Text Here</h1>
-                </div>
-
+            <div className="video-container">
+                <video autoPlay muted loop className="background-video">
+                    <source src={video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <img src={logo1} alt="image" className='overlay-text' />
             </div>
             <div className='model-container'>
                 <Canvas style={{ width: '100%', height: '100%' }}>
