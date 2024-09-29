@@ -5,24 +5,24 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useSpring, a } from '@react-spring/three';
 import myModel from '../static/3d/WORKINGRENDER.glb';
-import video from '../static/video/Video-24.mp4'
-import './Home.css'
-
+import video from '../static/video/Video-24.mp4';
+import './Home.css';
 
 // Car Model Component
 const CarModel = () => {
     const { scene } = useGLTF(myModel);  // 3D model
     const carGroup = useRef<any>();
 
-    const { x } = useSpring({
-        from: { x: -5 },  // Starting position off-screen   
-        to: { x: 0 },    // End position at the center
-        config: { duration: 2000 },  // 2-second animation
+    // Spring animation for bouncing in from the top
+    const { y } = useSpring({
+        from: { y: 15 },  // Start far above the scene (off-screen)
+        to: { y: 0 },  // End position at the center of the scene
+        config: { tension: 180, friction: 12 },  // Adjust for bounce effect
     });
 
     useFrame(() => {
         if (carGroup.current) {
-            carGroup.current.position.x = x.get();  // Update the car position
+            carGroup.current.position.y = y.get();  // Update the y position of the car
         }
     });
 
@@ -54,13 +54,19 @@ export const Home = () => {
             <div className='image-container' ref={imageContainerRef}>
                 <img src={logo} alt="Ewouk-logo" />
             </div>
+
             <div className="video-container">
+                {/* Semi-transparent background overlay */}
+                <div className="background-overlay"></div>
+
                 <video autoPlay muted loop className="background-video">
                     <source src={video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+
                 <img src={logo1} alt="image" className='overlay-text' />
             </div>
+
             <div className='model-container'>
                 <Canvas style={{ width: '100%', height: '100%' }}>
                     <ambientLight intensity={1.5} />
@@ -70,6 +76,6 @@ export const Home = () => {
                 </Canvas>
             </div>
         </div>
-
     );
 };
+

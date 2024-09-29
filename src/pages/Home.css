@@ -1,13 +1,36 @@
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden;
 }
 
+.home-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        114.65deg,
+        rgba(0, 6, 14, 0.7) 1.01%,   
+        rgba(35, 51, 69, 0.7) 5.63%, 
+        rgba(0, 1, 5, 0.7) 97.49%     
+    );
+    z-index: 2;
+}
+
 .video-container {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    width: 98%; 
+    height: 100%; 
     overflow: hidden;
 }
 
@@ -15,23 +38,128 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
+    width: 100%; /* Set to full width for better responsiveness */
     height: auto;
     z-index: 1;
+    transform: translate(-50%, -50%) rotate(270deg);
+    object-fit: cover;
+}
+
+/* Model container for the 3D model */
+.model-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100%; /* Wider for mobile */
+    height: auto;
+    z-index: 4;
     transform: translate(-50%, -50%);
 }
 
 .overlay-text {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     left: 10%;
-    top: 25%;   
+    top: 15%; /* Adjusted to fit better on mobile */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative  ;
     width: 80%;
-    height: 50%;
+    height: auto; /* Adjust to auto for responsiveness */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .home-container {
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        overflow: auto; /* Enable scrolling on body */
+    }
+
+    .video-container {
+        width: 98%;
+        height: 98%;
+         /* Adjust height to prevent overflow */
+    }
+
+    .background-video {
+        
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Set to auto to maintain aspect ratio */
+        top: 30%; /* Centering the video */
+        transform: translate(-50%, -50%) rotate(0deg); /* No rotation */
+    }
+
+    .model-container {
+        width: 80%; /* Larger for mobile */
+        height: auto;
+        
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%; /* Wider for mobile */
+            height: auto;
+            z-index: 4;
+            transform: translate(-50%, -50%);
+        
+        right:  2%;
+        top: 50%; /* Center the model vertically */
+        transform: translate(-50%, -50%);
+    }
+
+    .overlay-text {
+        top: 10%; /* Higher to fit the layout */
+        width: 90%; 
+        right:  2%;/* More space for text */
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+/* Responsive Design for Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .video-container {
+        height: auto;
+        width: 98%; /* Full height on tablets */
+    }
+
+    .background-video {
+        width: 100%; /* Full width */
+        height: auto; /* Automatic height */
+    }
+
+    .model-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%; /* Wider for mobile */
+        height: auto;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+    
+    }
+
+    .overlay-text {
+        font-size: 18px; /* Slightly larger text for tablets */
+    }
+}
+
+/* Responsive Design for Monitors/TVs */
+@media (min-width: 1200px) {
+    .background-video {
+        height: auto;
+        width: 98%;
+    }
+
+    .model-container {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        width: 100%; /* Wider for mobile */
+        height: 40%;
+        z-index: 4;
+        transform: translate(-50%, -50%);
+    
+    }
 }
