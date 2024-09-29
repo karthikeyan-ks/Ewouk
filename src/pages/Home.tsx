@@ -5,6 +5,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useSpring, a } from '@react-spring/three';
 import myModel from '../static/3d/WORKINGRENDER.glb';
+import './Home.css'
+import video from '../static/video/Video-24.mp4'
 
 
 // Car Model Component
@@ -49,21 +51,28 @@ export const Home = () => {
 
     return (
         <div className='home-container'>
-    <div className='image-container' ref={imageContainerRef}>
-        <img src={logo} alt="Ewouk-logo" />
-    </div>
-    <div className='ewouk-name' ref={ewoukNameRef}>
-        <img src={logo1} alt='ewouk-name' />
-    </div>
-    <div className='model-container'>
-        <Canvas style={{ width: '100%', height: '100%' }}>
-            <ambientLight intensity={1.5} />
-            <directionalLight position={[3, 6, 4]} intensity={2} />
-            <OrbitControls enableZoom={false} />
-            <CarModel />
-        </Canvas>
-    </div>
-</div>
+            <div className='image-container' ref={imageContainerRef}>
+                <img src={logo} alt="Ewouk-logo" />
+            </div>
+            <div className='ewouk-name' ref={ewoukNameRef}>
+                <div className="video-container">
+                    <video autoPlay muted loop className="background-video">
+                        <source src={video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <h1 className="overlay-text">Your Text Here</h1>
+                </div>
+
+            </div>
+            <div className='model-container'>
+                <Canvas style={{ width: '100%', height: '100%' }}>
+                    <ambientLight intensity={1.5} />
+                    <directionalLight position={[3, 6, 4]} intensity={2} />
+                    <OrbitControls enableZoom={false} />
+                    <CarModel />
+                </Canvas>
+            </div>
+        </div>
 
     );
 };
