@@ -1,151 +1,177 @@
 .navbar {
-    position: fixed;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content; /* Adjust to content */
-    height: 8%; /* Adjust to content */
-    background: #000000;
-    border-radius: 42.5px;
-    padding: 10px 20px; /* Add padding for better visibility */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it's above other content */
-    filter: drop-shadow(9px 13px 4px rgba(0, 0, 0, 0.7));
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: 8%;
+  background: #000000;
+  border-radius: 42.5px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  filter: drop-shadow(9px 13px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+  border-radius: 42.5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navbar-links a.active {
+  background: #ffffff;
+  color: #000000;
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon styling */
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .navbar {
+      width: 90%; /* Full width for mobile */
+      height: auto; /* Auto height to fit all links */
+      border-radius: 30px; /* Adjusted border radius for small screens */
+      padding: 8px 15px; /* Reduced padding */
+      bottom: 5%; /* Adjusted distance from the bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: space-between; /* Space between links */
   }
-  /* Group 168 */
-
-
-
-
+  
   .navbar-links {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Align links vertically */
+      flex-direction: row;
+      justify-content: space-evenly; /* Evenly space links */
+      width: 100%; /* Full width for better spacing */
+      padding: 0;
   }
-  
+
   .navbar-links li {
-    margin: 0 15px; /* Space between links */
+      margin: 0 5px; /* Reduced margin between links */
   }
-  
+
   .navbar-links a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 10px 15px; /* Adjust padding for better spacing */
-    transition: color 0.3s;
-    border-radius: 42.5px;
-    display: flex; /* To align icons and text horizontally */
-    align-items: center; /* Center icon and text vertically */
-    flex-direction: row; /* Default to row layout (icon next to text) */
+      font-size: 0.875rem; /* Slightly smaller font for mobile */
+      padding: 0.5rem;
+      flex-direction: column; /* Stack icon above the text */
+      align-items: center;
+      text-align: center; /* Center the text below icons */
   }
-  
-  .navbar-links a.active {
-    background: #ffffff; /* White background for the active link */
-    color: #000000; /* Black text for the active link */
-    transition: background 0.3s ease-in-out 0s;/* Smooth transition */
-  }
-  
-  
-  .navbar-links a:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  /* Icon styling */
+
   .nav-icon {
-    width: 20px; /* Icon size */
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle; /* Align icons with text */
+      margin-right: 0; /* Remove margin between icon and text */
+      width: 1.25rem; /* Slightly smaller icon size for mobile */
+      height: 1.25rem;
+  }
+}
+
+/* Tablet view adjustments */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+      width: fit-content;
+      height: 8%;
+      border-radius: 40px;
+      padding: 10px 0;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: space-around;
   }
   
-  /* Mobile-specific adjustments */
-  @media (min-width: 601px) and (max-width: 1024px) {
-    .navbar {
-        
-            width: fit-content; 
-            height: 8%; /* Full width on mobile */
-            border-radius: 40px; /* Rounded corners */
-            padding: 10px 0; /* Padding for mobile */
-            position: fixed; /* Fix position to the screen */
-            bottom: 18px; /* Distance from the bottom */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Offset by half its width to truly center it */
-            justify-content: space-around; /* Space around content */
-        }
-        
-    
-    .navbar-links {
-      flex-direction: row; /* Keep the links in a row */
-      justify-content: space-evenly; /* Even spacing between links */
-      width: 100%; /* Full width for better spacing */
-      padding: 0 10px; /* Padding on both sides */
-    }
-  
-    .navbar-links li {
-      margin: 0 5px; /* Reduced margin for better fit */
-    }
-  
-    .navbar-links a {
-        font-size: 1rem; /* 16px font size for mobile */
-        padding: 0.625rem 0.5rem;  /* Adjusted padding */
-      flex-direction: column; /* Stack icon above the text */
-      align-items: center; 
-      white-space: nowrap; /* Center icon and text vertically */
-    }
-  
-    /* Show icons next to the text on mobile */
-    .nav-icon {
-        margin-right: 0.25rem; /* 4px space between icon and text */
-        width: 1.5rem; /* 24px icon size for mobile */
-        height: 1.5rem; 
-    }
+  .navbar-links {
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      padding: 0 10px;
   }
-  @media (max-width: 601px) {
-    .navbar {
-        
-            width: fit-content; 
-            height: 8%; /* Full width on mobile */
-            border-radius: 40px; /* Rounded corners */
-            padding: 10px 0; /* Padding for mobile */
-            position: fixed; /* Fix position to the screen */
-            bottom: 18px; /* Distance from the bottom */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Offset by half its width to truly center it */
-            justify-content: space-around; /* Space around content */
-        }
-        
-    
-    .navbar-links {
-      flex-direction: row; /* Keep the links in a row */
-      justify-content: space-evenly; /* Even spacing between links */
-      width: 100%; /* Full width for better spacing */
-      padding: 0 10px; /* Padding on both sides */
-    }
-  
-    .navbar-links li {
-      margin: 0 5px; /* Reduced margin for better fit */
-    }
-  
-    .navbar-links a {
-        font-size: 1rem; /* 16px font size for mobile */
-        padding: 0.625rem 0.5rem;  /* Adjusted padding */
-      flex-direction: column; /* Stack icon above the text */
-      align-items: center; 
-      white-space: nowrap; /* Center icon and text vertically */
-    }
-  
-    /* Show icons next to the text on mobile */
-    .nav-icon {
-        margin-right: 0.25rem; /* 4px space between icon and text */
-        width: 1.5rem; /* 24px icon size for mobile */
-        height: 1.5rem; 
-    }
+
+  .navbar-links li {
+      margin: 0 5px;
+  }
+
+  .navbar-links a {
+      font-size: 1rem;
+      padding: 0.625rem 0.5rem;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-icon {
+      margin-right: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .navbar {
+      width: fit-content; /* Full width for mobile */
+      height: auto; /* Auto height for flexibility */
+      border-radius: 30px; /* Adjusted border radius for small screens */
+      padding: 8px 15px;
+     
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: space-around;
   }
   
+  .navbar-links {
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      padding: 0;
+  }
+
+  .navbar-links li {
+      margin: 0 5px;
+  }
+
+  .navbar-links a {
+      font-size: 0.5rem; /* Slightly smaller font for mobile */
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Center the text below icons */
+  }
+
+  .nav-icon {
+      margin-right: 0;
+      width: 1.25rem; /* Slightly smaller icon size for mobile */
+      height: 1.25rem;
+  }
+}

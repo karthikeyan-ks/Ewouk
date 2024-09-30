@@ -18,10 +18,10 @@ html, body {
 }
 
 .image-container img {
-    width: 100px; /* Fill the container */
-    height: 100px; /* Keep the aspect ratio */
+    width: 35%; /* Fill the container */
+    height: 35%; /* Keep the aspect ratio */
 }
-
+S
 /* Styling for the About section */
 .about-section {
     min-height: 100vh; /* Takes up the full viewport height */
@@ -100,18 +100,30 @@ html, body {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     body {
-        overflow: auto; /* Allow scrolling on mobile */
+        overflow: hidden; /* Allow scrolling on mobile */
     }
 
     .image-container {
-        width: 80%; /* Expand width on mobile */
+        width: 90%; /* Expand width on mobile */
     }
 
+    .overlay-text img {
+        width: 50%; /* Increase width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .overlay-text {
+        top: 10%; /* Adjust text positioning */
+        width: 95%; /* Increase width */
+        font-size: 16px; /* Slightly larger font size */
+    }
     .background-video {
         position: absolute;
-        width: 100vw; /* Full width */
-        height: 1000px;
-        object-fit: contain;
+        width:fit-content; /* Full width */
+        height: fit-content;
+        overflow: hidden;
+        object-fit:cover;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     .model-container {
@@ -140,6 +152,7 @@ html, body {
     .background-video {
         width: 100%; /* Full width */
         height: auto;
+        transform: translate(-50%, -50%) rotate(90deg);
     }
 
     .model-container {
