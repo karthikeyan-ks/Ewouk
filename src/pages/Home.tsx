@@ -67,14 +67,6 @@ export const Home = () => {
                 <img src={logo1} alt="image" className='overlay-text' />
             </div>
 
-            <div className='model-container'>
-                <Canvas style={{ width: '100%', height: '100%' }}>
-                    <ambientLight intensity={1.5} />
-                    <directionalLight position={[3, 6, 4]} intensity={2} />
-                    <OrbitControls enableZoom={false} />
-                    <CarModel />
-                </Canvas>
-            </div>
         </div>
     );
 };
