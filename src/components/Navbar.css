@@ -1,6 +1,6 @@
 .navbar {
     position: fixed;
-    bottom: 1px;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
     width: fit-content; /* Adjust to content */

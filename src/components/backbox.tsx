@@ -6,12 +6,16 @@ import { Home } from '../pages/Home';
 import { Sponsers } from '../pages/Sponsers';
 import { Team } from '../pages/Team';
 import {About} from '../pages/About';
-
+import video from '../static/video/Video-24.mp4';
 
 const Backbox = () => {
   return (  
     <BrowserRouter>
       <div className='box'>
+               
+               
+
+               
         <Routes>
           {/* Default page as Home */}
           <Route path='/' element={<Home />} />
