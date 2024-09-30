@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background: linear-gradient(116.63deg, rgba(32, 0, 52, 0.96) 2.39%, rgba(103, 0, 167, 0.84) 50.84%, rgba(42, 0, 68, 0.91) 100%);
-
+  overflow: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

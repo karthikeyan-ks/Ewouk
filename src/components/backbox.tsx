@@ -7,6 +7,7 @@ import { Sponsers } from '../pages/Sponsers';
 import { Team } from '../pages/Team';
 import {About} from '../pages/About';
 
+
 const Backbox = () => {
   return (  
     <BrowserRouter>
@@ -20,7 +21,7 @@ const Backbox = () => {
           <Route path='/team' element={<Team/>}/>
         
         </Routes>
-      </div>
+      </div>    
     </BrowserRouter>
   );
 };
