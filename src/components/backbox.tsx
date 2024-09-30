@@ -11,7 +11,7 @@ import {About} from '../pages/About';
 const Backbox = () => {
   return (  
     <BrowserRouter>
-      <div className='box'>
+      <div >
                               
         <Routes>
           {/* Default page as Home */}

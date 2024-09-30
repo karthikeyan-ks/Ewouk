@@ -58,7 +58,7 @@ export const Home = () => {
                     <img src={logo} alt="Ewouk-logo" />
                 </div>
 
-                <video autoPlay muted loop className="background-video">
+                <video autoPlay muted loop className="background-video1">
                     <source src={video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
