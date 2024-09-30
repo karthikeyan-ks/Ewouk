@@ -1,6 +1,6 @@
 import './Navbar.css';
 import { useEffect, useState } from 'react';
-import { FaHome, FaInfoCircle, FaUsers, FaHandshake } from 'react-icons/fa'; // Import icons from React Icons
+import { FaHome, FaInfoCircle, FaUsers, FaHandshake, FaProductHunt } from 'react-icons/fa'; // Import icons from React Icons
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -66,6 +66,18 @@ const Navbar = () => {
             }}
           >
             <FaHandshake className="nav-icon" /> SPONSORS
+          </a>
+        </li>
+        <li>
+          <a
+            href="/sponsers"
+            className={activeLink === 'project' ? 'active' : ''}
+            onClick={() => {
+              setActiveLink('project')
+              localStorage.setItem('navbar',"4")
+            }}
+          >
+            <FaProductHunt className="nav-icon" /> PROJECT
           </a>
         </li>
       </ul>

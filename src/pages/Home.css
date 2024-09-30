@@ -2,47 +2,72 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* You can allow scrolling as per the content */
 }
 
-.home-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+.image-container {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%); /* Center the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Default width, adjusts on mobile */
+}
+
+.image-container img {
+    width: 100px; /* Fill the container */
+    height: 100px; /* Keep the aspect ratio */
+}
+
+/* Styling for the About section */
+.about-section {
+    min-height: 100vh; /* Takes up the full viewport height */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.about-section.visible {
+    opacity: 1; /* Fades in when the section becomes visible */
 }
 
 .background-overlay {
     position: absolute;
-    top: 0;
+    top: 15%;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        114.65deg,
-        rgba(0, 6, 14, 0.7) 1.01%,   
-        rgba(35, 51, 69, 0.7) 5.63%, 
-        rgba(0, 1, 5, 0.7) 97.49%     
-    );
-    z-index: 2;
+    background: transparent;
+    z-index: 5;
 }
 
 .video-container {
     position: relative;
-    width: 98%; 
+    width: 100%; 
     height: 100%; 
     overflow: hidden;
 }
+.video-top{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+}
 
 .background-video {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    width: 100%; /* Set to full width for better responsiveness */
-    height: auto;
+    width: 100%; /* Full width for responsiveness */
+    height: 100%;
     z-index: 1;
     transform: translate(-50%, -50%) rotate(270deg);
     object-fit: cover;
+    
 }
 
 /* Model container for the 3D model */
@@ -50,116 +75,124 @@ html, body {
     position: absolute;
     top: 30%;
     left: 50%;
-    width: 100%; /* Wider for mobile */
+    width: 100%;
     height: auto;
     z-index: 4;
     transform: translate(-50%, -50%);
 }
 
 .overlay-text {
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 5;
     left: 10%;
-    top: 15%; /* Adjusted to fit better on mobile */
+    top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: auto; /* Adjust to auto for responsiveness */
+    height: 90%;
+}
+.overlay-text img{
+    width: auto;
+    height: 15%;
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
-    .home-container {
-        width: 100%;
-        height: 100%;
-    }
     body {
-        overflow: auto; /* Enable scrolling on body */
+        overflow: auto; /* Allow scrolling on mobile */
     }
 
-    .video-container {
-        width: 98%;
-        height: 98%;
-         /* Adjust height to prevent overflow */
+    .image-container {
+        width: 80%; /* Expand width on mobile */
     }
 
     .background-video {
-        
-        width: 100%; /* Full width for mobile */
-        height: auto; /* Set to auto to maintain aspect ratio */
-        top: 30%; /* Centering the video */
-        transform: translate(-50%, -50%) rotate(0deg); /* No rotation */
+        position: absolute;
+        width: 100vw; /* Full width */
+        height: 1000px;
+        object-fit: contain;
     }
 
     .model-container {
-        width: 80%; /* Larger for mobile */
-        height: auto;
-        
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%; /* Wider for mobile */
-            height: auto;
-            z-index: 4;
-            transform: translate(-50%, -50%);
-        
-        right:  2%;
-        top: 50%; /* Center the model vertically */
-        transform: translate(-50%, -50%);
+        width: 80%; /* Larger model container */
+        top: 50%; /* Adjust positioning for mobile */
     }
 
     .overlay-text {
-        top: 10%; /* Higher to fit the layout */
-        width: 90%; 
-        right:  2%;/* More space for text */
-        font-size: 14px; /* Smaller font for mobile */
+        top: 10%; /* Adjust text positioning */
+        width: 90%; /* Adjust width */
+        font-size: 14px; /* Smaller font size */
+    }
+    .overlay-text img {
+        top: 10%; /* Adjust text positioning */
+        width: 35%; /* Adjust width */
+        font-size: 14px; /* Smaller font size */
     }
 }
 
 /* Responsive Design for Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .video-container {
-        height: auto;
-        width: 98%; /* Full height on tablets */
+    .image-container {
+        width: 70%; /* Slightly larger on tablets */
     }
 
     .background-video {
         width: 100%; /* Full width */
-        height: auto; /* Automatic height */
+        height: auto;
     }
 
     .model-container {
-        position: absolute;
+        width: 80%; /* Adjust size for tablets */
         top: 50%;
-        left: 50%;
-        width: 100%; /* Wider for mobile */
-        height: auto;
-        z-index: 4;
-        transform: translate(-50%, -50%);
-    
     }
 
     .overlay-text {
-        font-size: 18px; /* Slightly larger text for tablets */
+        font-size: 18px; /* Larger font for tablets */
     }
 }
 
 /* Responsive Design for Monitors/TVs */
 @media (min-width: 1200px) {
+    .image-container {
+        width: 50%; /* Adjust for larger screens */
+    }
+
     .background-video {
+        width: 98%; /* Adjust video size */
         height: auto;
-        width: 98%;
     }
 
     .model-container {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        width: 100%; /* Wider for mobile */
+        top: 70%; /* Adjust for larger screens */
+        width: 100%;
         height: 40%;
-        z-index: 4;
-        transform: translate(-50%, -50%);
-    
     }
+}
+/* Video container with gradient */
+
+
+/* Gradient overlay */
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -15px;
+    width: 100%;
+    height: 110%;
+    z-index: 2;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* Transparent to black */
+    pointer-events: none; /* Ensures the video is still interactive if needed */
+}
+
+.image-container {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
